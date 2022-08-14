@@ -1,0 +1,102 @@
+@import "resetCSS";
+
+@mixin heading-font {
+    font-weight: 900;
+    color: hsl(223, 47%, 23%);
+}
+@mixin normal-font{
+    font-size: 2vh;
+    font-weight: 500;
+    color: hsl(224, 23%, 55%);
+}
+
+
+body{
+    background-color: hsl(225, 100%, 94%);
+    background-image: url("images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.window{
+    width: 50vh;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+        .title{
+            @include heading-font;
+            font-size: 3.5vh;
+            padding-top: 3vh;
+        }
+        .description{
+            @include normal-font;
+            padding: 1vh 3vh 1vh 3vh;
+        }
+        .img-container{
+            img{
+                border-radius: 15px 15px 0 0;
+            }
+        }
+        .offer{
+            padding: 0.5vh 5vh 0.5vh 5vh;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            img{
+                width: 6vh;
+            }
+            p{
+                padding-left: 1vh;
+            }
+            .prize{
+                @include normal-font;
+            }
+            .plan-name{
+                @include heading-font;
+                font-size: 2vh;
+            }
+            .change-link{
+                text-align: right;
+                font-weight: 500;
+                font-size: 2vh;
+                flex-grow: 2;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            button{
+                width: 80%;
+                height: 5vh;
+                color: white;
+                background-color: hsl(245, 75%, 52%);
+                border: none;
+                border-radius: 5px;
+                font-family: 'Red Hat Display', sans-serif;
+                margin: 2vh;
+                font-size: 2vh;
+                &:hover{
+                    background-color: hsla(245, 75%, 52%, 70%)
+                }
+            }
+            a{
+                @include normal-font;
+                padding-bottom: 4vh;
+                text-decoration: none;
+                font-weight: 700;
+                &:hover{
+                    color: hsl(223, 47%, 23%);
+                    font-weight: 700;
+                }
+            }
+        }
+}
+@import "mobile";
+
